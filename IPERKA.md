@@ -1,4 +1,6 @@
 # IPERKA
+von Holzherr Janic und Joel Fritschi
+Schauen Sie sich gerne unser [Readme File]([https://www.google.com](https://github.com/SomethingLikeAChicken/Native-Todo-List/edit/main/README.md) "README.md File") an um zu verstehen wie die App funktioniert.
 ## Informieren:
 ## Planen:
 | Arbeitspaket | Verantwortliche Person | Abgabe Datum | Zeitaufwand |
