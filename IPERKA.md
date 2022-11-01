@@ -5,7 +5,7 @@ Schauen Sie sich gerne unser [Readme File](https://github.com/SomethingLikeAChic
 ## Planen:
 ### Todo-Liste mit Arbeitseinteilung
 | Arbeitspaket | Verantwortliche Person | Abgabe Datum | Zeitaufwand |
-| -------------|:-----------------------| ------------:|:------------|
+|:-------------:|:-----------------------:|:------------:|:------------:|
 | Projekt erstellen mit React Native | Joel | 1.11.2022 | 30min |
 | Todo-Liste für das Projekt erstellen | Janic | 1.11.2022 | 45min |
 | **Expo Go** installieren | Janic und Joel | 1.11.2022 | 20min |
