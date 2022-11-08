@@ -16,7 +16,11 @@ Schauen Sie sich gerne unser [Readme File](https://github.com/SomethingLikeAChic
 | Todo-Liste für das Projekt anpassen und Todos hinzufügen | Janic | 13.12.2022| Jeden Arbeitstag 30min | Nein |
 | Funktion um die Todos zu erstellen programmieren | Janic | 16.11.2022 | 45min | Nein |
 | Projekt mit Datenbank verbinden | Eduard | 8.11.2022 | 45min | Ja |
+| Mockup für die Login Seite erstellen | Janic | 16.11.2022 | 45min | Ja |
+| Mockup für die Sign Up Seite erstellen | Janic | 16.11.2022 | 45min | Ja |
 | Login Component erstellen und Attribute füllen | Eduard | 16.11.2022 | 45min | Nein |
+| Login Funktionen implementieren | Eduard | 16.11.2022 | 45min | Nein |
+| Login Daten abspeichern durch Firebase | Eduard | 16.11.2022 | 45min | Nein |
 | - | - | - | - |
 
 ### Mockup Design
