@@ -20,7 +20,7 @@ Schauen Sie sich gerne unser [Readme File](https://github.com/SomethingLikeAChic
 | - | - | - | - |
 
 ### Mockup Design
-
+![Mockup Design](https://github.com/SomethingLikeAChicken/Native-Todo-List/blob/main/resources/MockupDesign.png)
 ## Entscheiden:
 ## Realisieren:
 ## Kontrollieren:
