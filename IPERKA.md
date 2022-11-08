@@ -18,6 +18,9 @@ Schauen Sie sich gerne unser [Readme File](https://github.com/SomethingLikeAChic
 | Projekt mit Datenbank verbinden | Eduard | 8.11.2022 | 45min |
 | Login Component erstellen und Attribute füllen | Eduard | 16.11.2022 | 45min |
 | - | - | - | - |
+
+### Mockup Design
+
 ## Entscheiden:
 ## Realisieren:
 ## Kontrollieren:
