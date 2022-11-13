@@ -13,6 +13,9 @@ const LoginPage = () => {
 
   const navigation = useNavigation()
 
+
+
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
@@ -23,6 +26,15 @@ const LoginPage = () => {
     return unsubscribe
   }, [])
 
+
+
+
+  const goToSignUp = () => {
+    navigation.navigate("SignUp")
+  }
+
+
+
   const handleSignUp = () => {
     auth
       .createUserWithEmailAndPassword(email, passwort)
@@ -32,6 +44,8 @@ const LoginPage = () => {
       })
       .catch(error => alert(error.message))
   }
+
+
 
 
   const handleLogin = () => {
@@ -68,6 +82,10 @@ const LoginPage = () => {
             onChangeText={text => setPasswort(text)}
             style={styles.input}
             secureTextEntry
+          />
+          <Button
+            title="Sign Up"
+            onPress={goToSignUp}
           />
           <View style={styles.btnContainer}>
             <Button 
