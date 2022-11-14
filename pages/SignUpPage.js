@@ -1,6 +1,6 @@
 import { SafeAreaView, TouchableWithoutFeedback, Button, Keyboard, KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { auth } from '../firebase'
+import { auth, db } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
 
 
@@ -43,6 +43,22 @@ const SignUpPage = () => {
         console.log('Registreirt mit:', user.email);
       })
       .catch(error => alert(error.message))
+
+      db.collection("users").add({
+        first: "Alan",
+        middle: "Mathison",
+        last: "Turing",
+        born: 1912
+    })
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", error);
+    });
+
+
+
   }
 
   
