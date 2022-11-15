@@ -20,6 +20,29 @@ const SignUpPage = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
+        auth
+          .signInWithEmailAndPassword(email, passwort)
+          .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log('Eingelogttt:', user.email);
+            console.log(user.uid);
+          })
+
+          .catch(error => alert(error.message))
+
+
+        db.collection("users").add({
+          name: "edu",
+          userid: user.uid
+        })
+          .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+          });
+
+          
         navigation.navigate("Home")
       }
     })
@@ -44,24 +67,9 @@ const SignUpPage = () => {
       })
       .catch(error => alert(error.message))
 
-      db.collection("users").add({
-        first: "Alan",
-        middle: "Mathison",
-        last: "Turing",
-        born: 1912
-    })
-    .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
-    })
-    .catch((error) => {
-        console.error("Error adding document: ", error);
-    });
-
-
-
   }
 
-  
+
 
 
   return (
@@ -93,14 +101,14 @@ const SignUpPage = () => {
             style={styles.input}
             secureTextEntry
           />
-          <Button 
-              title="Log In" 
-              onPress={goToLogIn}
-            />
+          <Button
+            title="Log In"
+            onPress={goToLogIn}
+          />
           <View style={styles.btnContainer}>
-            <Button 
+            <Button
               color="white"
-              title="Sign Up" 
+              title="Sign Up"
               onPress={handleSignUp}
             />
           </View>
@@ -149,5 +157,5 @@ const styles = StyleSheet.create({
   },
 
 
-  
+
 })
