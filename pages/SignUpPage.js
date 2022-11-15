@@ -17,45 +17,9 @@ const SignUpPage = () => {
   const navigation = useNavigation()
 
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(user => {
-      if (user) {
-        auth
-          .signInWithEmailAndPassword(email, passwort)
-          .then(userCredentials => {
-            const user = userCredentials.user;
-            console.log('Eingelogttt:', user.email);
-            console.log(user.uid);
-          })
-
-          .catch(error => alert(error.message))
-
-
-        db.collection("users").add({
-          name: "edu",
-          userid: user.uid
-        })
-          .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-          })
-          .catch((error) => {
-            console.error("Error adding document: ", error);
-          });
-
-          
-        navigation.navigate("Home")
-      }
-    })
-    return unsubscribe
-  }, [])
-
-
-
-
   const goToLogIn = () => {
     navigation.navigate("Login")
   }
-
 
 
   const handleSignUp = () => {
@@ -64,17 +28,37 @@ const SignUpPage = () => {
       .then(userCredentials => {
         const user = userCredentials.user;
         console.log('Registreirt mit:', user.email);
-      })
-      .catch(error => alert(error.message))
+        
+          const unsubscribe = auth.onAuthStateChanged(user => {
+            if (user) {
+              auth
+                .signInWithEmailAndPassword(email, passwort)
+                .then(userCredentials => {
+                  const user = userCredentials.user;
+                  console.log('Eingelogttt:', user.email);
+                  console.log(user.uid);
+                })
+                .catch(error => alert(error.message))
+      
+                var dbRef = db.collection("users");
+                dbRef.doc(user.uid).set({
+                    name: username, 
+                    uid: user.uid, 
+                    mail: auth.currentUser?.email,
+                    });
 
+              navigation.navigate("Home")
+            }
+          })
+          return unsubscribe
+        })
+      .catch(error => alert(error.message))  
   }
 
 
 
 
   return (
-
-
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
@@ -115,14 +99,12 @@ const SignUpPage = () => {
         </SafeAreaView>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
-
   )
 }
 
 export default SignUpPage
 
 const styles = StyleSheet.create({
-
 
   container: {
     flex: 1,

@@ -7,6 +7,12 @@ import { useNavigation } from '@react-navigation/core'
 
 const HomePage = () => {
 
+  const [userName, setUserName] = useState("")
+  const [titel, setTitel] = useState("")
+
+  var dbRef = db.collection("users");
+
+
   const navigation = useNavigation()
 
   const handleSignOut = () => {
@@ -18,50 +24,53 @@ const HomePage = () => {
       .catch(error => alert(error.message))
 
   }
-  const [userName, setUserName] = useState("")
 
+  
 
 
   useEffect(() => {
     // this code will run once
-
-
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        // User logged in already or has just logged in.
         console.log(user.uid);
-
         var docRef = db.collection("users").doc(user.uid);
-
 
 
         docRef.get().then((doc) => {
           if (doc.exists) {
             console.log(doc.data().name);
             setUserName(doc.data().name)
-
           } else {
-            
             console.log("No such document!");
-
           }
         })
-
       } else {
         // User not logged in or has just logged out.
       }
     });
-
-
-
-
-
-
-
-
-
-
   }, [])
+
+
+
+  const createToDo = () => {
+
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log(user.uid);
+        dbRef.doc(user.uid).set({
+          ToDoTitel: titel,
+        }, {merge: true})
+      } else {
+        // User not logged in or has just logged out.
+      }
+    });
+  }
+
+
+
+
+
 
   return (
 
@@ -73,10 +82,10 @@ const HomePage = () => {
           <Text style={styles.header}>Todos</Text>
           <Text style={styles.headertext}>Hallo {userName}</Text>
           <Text style={{ fontSize: 26 }}>Enter Your Todo...</Text>
-          <TextInput style={styles.input} placeholder="Title" />
+          <TextInput style={styles.input} onChangeText={text => setTitel(text)} placeholder="Title" />
           <TextInput style={styles.input} placeholder="Description" />
           <View style={styles.btnContainer}>
-            <Button title="Submit" color="white" />
+            <Button title="Submit" color="white" onPress={createToDo}/>
           </View>
 
           <TouchableOpacity
