@@ -9,6 +9,7 @@ const HomePage = () => {
 
   const [userName, setUserName] = useState("")
   const [titel, setTitel] = useState("")
+  const [description, setDescription] = useState("")
 
   var dbRef = db.collection("users");
 
@@ -32,13 +33,11 @@ const HomePage = () => {
     // this code will run once
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log(user.uid);
+        
         var docRef = db.collection("users").doc(user.uid);
-
-
+        
         docRef.get().then((doc) => {
           if (doc.exists) {
-            console.log(doc.data().name);
             setUserName(doc.data().name)
           } else {
             console.log("No such document!");
@@ -53,13 +52,13 @@ const HomePage = () => {
 
 
   const createToDo = () => {
-
-
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log(user.uid);
-        dbRef.doc(user.uid).set({
+        db.collection("ToDos").add({
           ToDoTitel: titel,
+          Description: description,
+          uid: user.uid, 
         }, {merge: true})
       } else {
         // User not logged in or has just logged out.
@@ -79,11 +78,11 @@ const HomePage = () => {
       style={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <SafeAreaView style={styles.inner}>
-          <Text style={styles.header}>Todos</Text>
+          <Text style={styles.header}>ToDos</Text>
           <Text style={styles.headertext}>Hallo {userName}</Text>
           <Text style={{ fontSize: 26 }}>Enter Your Todo...</Text>
           <TextInput style={styles.input} onChangeText={text => setTitel(text)} placeholder="Title" />
-          <TextInput style={styles.input} placeholder="Description" />
+          <TextInput style={styles.input} onChangeText={text => setDescription(text)} placeholder="Description" />
           <View style={styles.btnContainer}>
             <Button title="Submit" color="white" onPress={createToDo}/>
           </View>
