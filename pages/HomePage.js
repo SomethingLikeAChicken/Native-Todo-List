@@ -12,7 +12,7 @@ const HomePage = () => {
   const [description, setDescription] = useState("")
 
   var dbRef = db.collection("users");
-
+  var toDosRef = db.collection("ToDos");
 
   const navigation = useNavigation()
 
@@ -35,12 +35,12 @@ const HomePage = () => {
       if (user) {
         
         var docRef = db.collection("users").doc(user.uid);
-        
+
         docRef.get().then((doc) => {
           if (doc.exists) {
             setUserName(doc.data().name)
           } else {
-            console.log("No such document!");
+            console.log("Kein solche Sammlung");
           }
         })
       } else {
@@ -63,6 +63,18 @@ const HomePage = () => {
       } else {
         // User not logged in or has just logged out.
       }
+
+      db.collection("ToDos").where("uid", "==", user.uid)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
+
     });
   }
 
