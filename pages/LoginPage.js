@@ -35,19 +35,6 @@ const LoginPage = () => {
 
 
 
-  const handleSignUp = () => {
-    auth
-      .createUserWithEmailAndPassword(email, passwort)
-      .then(userCredentials => {
-        const user = userCredentials.user;
-        console.log('Registreirt mit:', user.email);
-      })
-      .catch(error => alert(error.message))
-  }
-
-
-
-
   const handleLogin = () => {
     auth
       .signInWithEmailAndPassword(email, passwort)

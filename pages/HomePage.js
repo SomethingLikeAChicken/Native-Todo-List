@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, Button, View, TouchableWithoutFeedback, Keyboard, SafeAreaView, TextInput, KeyboardAvoidingView } from 'react-native'
-import React from 'react'
-import { auth } from '../firebase'
+import React, { useEffect, useState } from 'react'
+import { auth, db } from '../firebase'
+import * as firebase from "firebase";
 import { useNavigation } from '@react-navigation/core'
 
 
@@ -15,7 +16,52 @@ const HomePage = () => {
         navigation.replace("Login")
       })
       .catch(error => alert(error.message))
+
   }
+  const [userName, setUserName] = useState("")
+
+
+
+  useEffect(() => {
+    // this code will run once
+
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // User logged in already or has just logged in.
+        console.log(user.uid);
+
+        var docRef = db.collection("users").doc(user.uid);
+
+
+
+        docRef.get().then((doc) => {
+          if (doc.exists) {
+            console.log(doc.data().name);
+            setUserName(doc.data().name)
+
+          } else {
+            
+            console.log("No such document!");
+
+          }
+        })
+
+      } else {
+        // User not logged in or has just logged out.
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+  }, [])
 
   return (
 
@@ -25,13 +71,12 @@ const HomePage = () => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <SafeAreaView style={styles.inner}>
           <Text style={styles.header}>Todos</Text>
-          <Text style={styles.headertext}>Hallo {auth.currentUser?.email}!</Text>
-
+          <Text style={styles.headertext}>Hallo {userName}</Text>
           <Text style={{ fontSize: 26 }}>Enter Your Todo...</Text>
           <TextInput style={styles.input} placeholder="Title" />
           <TextInput style={styles.input} placeholder="Description" />
           <View style={styles.btnContainer}>
-            <Button title="Submit" color="white"/>
+            <Button title="Submit" color="white" />
           </View>
 
           <TouchableOpacity
