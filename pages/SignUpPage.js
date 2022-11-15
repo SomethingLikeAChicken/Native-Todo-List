@@ -1,4 +1,4 @@
-import { SafeAreaView, TouchableWithoutFeedback, Button, Keyboard, KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { SafeAreaView, TouchableWithoutFeedback, Button, Keyboard, KeyboardAvoidingView, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { auth, db } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
@@ -27,32 +27,28 @@ const SignUpPage = () => {
       .createUserWithEmailAndPassword(email, passwort)
       .then(userCredentials => {
         const user = userCredentials.user;
-        console.log('Registreirt mit:', user.email);
-        
-          const unsubscribe = auth.onAuthStateChanged(user => {
-            if (user) {
-              auth
-                .signInWithEmailAndPassword(email, passwort)
-                .then(userCredentials => {
-                  const user = userCredentials.user;
-                  console.log('Eingelogttt:', user.email);
-                  console.log(user.uid);
-                })
-                .catch(error => alert(error.message))
-      
-                var dbRef = db.collection("users");
-                dbRef.doc(user.uid).set({
-                    name: username, 
-                    uid: user.uid, 
-                    mail: auth.currentUser?.email,
-                    });
+        const unsubscribe = auth.onAuthStateChanged(user => {
+          if (user) {
+            auth
+              .signInWithEmailAndPassword(email, passwort)
+              .then(userCredentials => {
+                const user = userCredentials.user;
+              })
+              .catch(error => alert(error.message))
+              
+            var dbRef = db.collection("users");
+            dbRef.doc(user.uid).set({
+              name: username,
+              uid: user.uid,
+              mail: auth.currentUser?.email,
+            });
 
-              navigation.navigate("Home")
-            }
-          })
-          return unsubscribe
+            navigation.navigate("Home")
+          }
         })
-      .catch(error => alert(error.message))  
+        return unsubscribe
+      })
+      .catch(error => alert(error.message))
   }
 
 
