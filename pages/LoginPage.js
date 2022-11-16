@@ -84,52 +84,6 @@ const LoginPage = () => {
         </SafeAreaView>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
-
-
-
-
-
-
-
-
-
-    /*  <KeyboardAvoidingView
-       behavior={Platform.OS === "ios" ? "padding" : "height"}
-       style={styles.container}
-     >
-       <Text style={styles.text} >Log In</Text>
-       <View style={styles.inputContainer}>
-         <TextInput
-           placeholder='Email'
-           value={email}
-           onChangeText={text => setEmail(text)}
-           style={styles.input}
-         />
-         <TextInput
-           placeholder='Passwort'
-           value={passwort}
-           onChangeText={text => setPasswort(text)}
-           style={styles.input}
-           secureTextEntry
-         />
-       </View>
- 
- 
-       <View style={styles.buttonContainer}>
-         <TouchableOpacity
-           onPress={handleLogin}
-           style={styles.button}
-         >
-           <Text style={styles.buttonText}>Login</Text>
-         </TouchableOpacity>
-         <TouchableOpacity
-           onPress={handleSignUp}
-           style={styles.button}
-         >
-           <Text style={styles.buttonOutlineText}>Register</Text>
-         </TouchableOpacity>
-       </View>
-     </KeyboardAvoidingView> */
   )
 }
 
@@ -169,53 +123,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#5DB075",
     borderRadius: 20,
   },
-
-
-  /* container: {
-   paddingTop: 75,
-   flex: 1,
-   alignItems: "center",
-   backgroundColor: "white",
- },
-
- text: {
-   fontSize: 30,
-   fontWeight: "bold",
-   textAlign: "center",
- },
-
- inputContainer: {
-   width: "80%",
- },
- input: {
-   backgroundColor: "white",
-   paddingHorizontal: 15,
-   paddingVertical: 10,
-   marginTop: 10,
-   backgroundColor: "lightgrey"
- },
- buttonContainer: {
-   flex: 1,
-   position: "absolute",
-   bottom: "10%",
-   width: "80%",
-   justifyContent: "center",
-   alignItems: "center",
-   marginTop: 30,
- },
- button: {
-   backgroundColor: "#5DB075",
-   width: "100%",
-   padding: 15,
-   borderRadius: 50,
-   margin: 2,
-   color: "white",
- },
- buttonText: {
-   color: "white"
- },
- buttonOutlineText: {
-
- }, */
 
 })
