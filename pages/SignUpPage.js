@@ -6,9 +6,6 @@ import { useNavigation } from '@react-navigation/native'
 
 
 
-
-
-
 const SignUpPage = () => {
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")

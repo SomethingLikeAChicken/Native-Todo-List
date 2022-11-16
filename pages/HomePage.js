@@ -34,6 +34,12 @@ const HomePage = () => {
       .then(() => {
         navigation.replace("Login");
       })
+      .then(() => {
+        setY([]);
+        setUserName("")
+        setTitel("")
+        setDescription("")
+      })
       .catch((error) => alert(error.message));
   };
 
@@ -170,12 +176,14 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 15,
   },
-  button: {
-    marginTop: 40,
-    backgroundColor: "#5DB075",
+  buttonSignOut: {
+    marginTop: 20,
     width: "30%",
-    padding: 15,
-    borderRadius: 15,
+    textAlign: "center",
+    alignSelf: "center",
+  },
+  buttonText: {
+    textAlign: "center",
   },
   header: {
     fontSize: 36,
