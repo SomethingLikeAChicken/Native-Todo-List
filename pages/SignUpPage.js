@@ -15,6 +15,9 @@ const SignUpPage = () => {
 
 
   const goToLogIn = () => {
+    setUsername()
+    setEmail()
+    setPasswort()
     navigation.navigate("Login")
   }
 

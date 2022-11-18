@@ -17,143 +17,155 @@ import * as firebase from "firebase";
 import { useNavigation } from "@react-navigation/core";
 
 const HomePage = () => {
-  const [userName, setUserName] = useState("");
-  const [titel, setTitel] = useState("");
-  const [description, setDescription] = useState("");
 
-  const [y, setY] = useState([]);
-  const [id, setId] = useState("");
+  const [userName, setUserName] = useState("")
+  const [titel, setTitel] = useState("")
+  const [description, setDescription] = useState("")
+  const [uid, setUid] = useState("")
+  const [y, setY] = useState([])
+  const [id, setId] = useState("")
+
 
   var dbRef = db.collection("users");
   var toDosRef = db.collection("ToDos");
   const navigation = useNavigation();
 
+
+
   const handleSignOut = () => {
     auth
       .signOut()
       .then(() => {
+        setY([])
+        setUserName()
+        setTitel()
+        setDescription()
         navigation.replace("Login");
-      })
-      .then(() => {
-        setY([]);
-        setUserName("")
-        setTitel("")
-        setDescription("")
       })
       .catch((error) => alert(error.message));
   };
 
+
+  const loadContent = () => {
+
+     var docRef = db.collection("users").doc(firebase.auth().currentUser.uid);
+     docRef.get().then((doc) => {
+       if (doc.exists) {
+         setUserName(doc.data().name);
+       } else {
+         console.log("Kein solche Sammlung");
+       }
+     });
+  
+     db.collection("ToDos")
+     .where("uid", "==", firebase.auth().currentUser.uid)
+     .get()
+     .then((querySnapshot) => {
+       querySnapshot.forEach((doc) => {
+         setY((current) => [
+           ...current,
+           {
+             id: doc.id,
+             tdTitel: doc.data("ToDoTitel").ToDoTitel,
+             description: doc.data("Description").Description,
+           },
+         ]);
+       });
+     })
+     .catch((error) => {
+       console.log("Error getting documents: ", error);
+     }); 
+  }
+
+
   useEffect(() => {
     // this code will run once
+
+    const user = firebase.auth().currentUser;
+
     setY([])
+    if (user) {
+      console.log("hey " + user.uid)
+      setUid(firebase.auth().currentUser.uid)
+      loadContent()
+    } else {
+      // No user is signed in.
+    }
+
+
+    /* 
     firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        var docRef = db.collection("users").doc(user.uid);
+      setUid(user.uid)
+      console.log("🚀 ~ file: HomePage.js ~ line 57 ~ firebase.auth ~ user.uid", uid)
 
-        docRef.get().then((doc) => {
-          if (doc.exists) {
-            setUserName(doc.data().name);
-          } else {
-            console.log("Kein solche Sammlung");
-          }
-        });
-      } else {
-        // User not logged in or has just logged out.
-      }
-
-      db.collection("ToDos")
-        .where("uid", "==", user.uid)
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            setY((current) => [
-              ...current,
-              {
-                id: doc.id,
-                tdTitel: doc.data("ToDoTitel").ToDoTitel,
-                description: doc.data("Description").Description,
-              },
-            ]);
-          });
-        })
-        .catch((error) => {
-          console.log("Error getting documents: ", error);
-        });
-      console.log(y);
     });
+    loadContent() */
+
   }, []);
 
+
+
+
   const createToDo = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        console.log(user.uid);
-        db.collection("ToDos")
-          .add({
-            ToDoTitel: titel,
-            Description: description,
-            uid: user.uid,
-          })
-          .then((docRef) => {
-            setId(docRef.id);
-            console.log("Document written with ID: ", docRef.id);
-          })
-          .catch((error) => {
-            console.error("Error adding document: ", error);
-          });
-      } else {
-        // User not logged in or has just logged out.
-      }
-      setY((current) => [
-        ...current,
-        {
-          id: id,
-          tdTitel: titel,
-          description: description,
-        },
-      ]);
-    });
+    db.collection("ToDos")
+      .add({
+        ToDoTitel: titel,
+        Description: description,
+        uid: uid,
+      })
+      .then((docRef) => {
+        setId(docRef.id);
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch((error) => {
+        console.error("Error adding document: ", error);
+      });
+    setY((current) => [
+      ...current,
+      {
+        id: id,
+        tdTitel: titel,
+        description: description,
+      },
+    ]);
+    setTitel("")
+    setDescription("")
   };
 
   const renderItem = ({ item }) => (
     <View style={styles.listContainer}>
-      <Text style={{fontSize: "25", fontweight: "normal"}}>{item.tdTitel}</Text>
-      <Text style={{fontSize: "13"}}>{item.description}</Text>
+      <Text style={{ fontSize: "25", fontweight: "normal" }}>{item.tdTitel}</Text>
+      <Text style={{ fontSize: "13" }}>{item.description}</Text>
     </View>
   );
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.container}>
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <SafeAreaView style={styles.inner}>
-          <Text style={styles.header}>ToDos</Text>
-          <Text style={styles.headertext}>Hallo {userName}</Text>
-          <Text style={{ fontSize: 26 }}>Enter Your Todo...</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={(text) => setTitel(text)}
-            placeholder="Title"
-          />
-          <TextInput
-            style={styles.input}
-            onChangeText={(text) => setDescription(text)}
-            placeholder="Description"
-          />
-          <View style={styles.btnContainer}>
-            <Button title="Submit" color="white" onPress={createToDo} />
-          </View>
-          <TouchableOpacity onPress={handleSignOut} style={styles.buttonSignOut}>
-            <Text style={styles.buttonText}>Sign out</Text>
-          </TouchableOpacity>
-          <FlatList
-            data={y}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.id}
-          />
-        </SafeAreaView>
-      </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
+    <SafeAreaView style={styles.inner}>
+      <Text style={styles.header}>ToDos</Text>
+      <Text style={styles.headertext}>Hallo {userName}</Text>
+      <Text style={{ fontSize: 26 }}>Enter Your Todo...</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(text) => setTitel(text)}
+        placeholder="Title"
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={(text) => setDescription(text)}
+        placeholder="Description"
+      />
+      <View style={styles.btnContainer}>
+        <Button title="Submit" color="white" onPress={createToDo} />
+      </View>
+      <TouchableOpacity onPress={handleSignOut} style={styles.buttonSignOut}>
+        <Text style={styles.buttonText}>Sign out</Text>
+      </TouchableOpacity>
+      <FlatList
+        data={y}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+      />
+    </SafeAreaView>
   );
 };
 
