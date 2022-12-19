@@ -32,8 +32,6 @@ const HomePage = () => {
   var toDosRef = db.collection("ToDos");
   const navigation = useNavigation();
 
-
-
   const handleSignOut = () => {
     auth
       .signOut()
