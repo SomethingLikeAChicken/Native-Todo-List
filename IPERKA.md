@@ -3,7 +3,7 @@
 Schauen Sie sich gerne unser [Readme File](https://github.com/SomethingLikeAChicken/Native-Todo-List/blob/main/README.md "README.md File") an um zu verstehen wie die App funktioniert.
 ## Informieren:
 | Nummer | Muss/Kann | Funktional/Qualität/Rand- Anforderung | Beschreibung |
-|:-------------|:-----------------------:|:------------:|:------------:| :------------: |
+|:-------------|:-----------------------:|:------------:|:------------:|
 | 1 | M | Funktional | Synchronisierung: Die App sollte es Benutzern ermöglichen, ihre To-Do-Listen auf mehreren Geräten zu synchronisieren, damit sie von überall aus auf ihre Aufgaben zugreifen können. | 
 | - | - | - | - |
 ## Planen:
