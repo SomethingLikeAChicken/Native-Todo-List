@@ -39,10 +39,34 @@ Als unser Projekt haben wir uns dazu entschieden, eine Todo-List App zu erstelle
 | Nummer | Getestete Anforderung | Voraussetzung | Eingabe | Ausgabe |
 |:-------------|:-----------------------:|:------------:|:------------:| :------------: |
 | 1.1 | 1 | Zwei Handys stehen zurverfügung. Bei beiden ist die App gestartet und man hat sich bei beiden mit dem selben Handy eingeloggt. | To-Do erstellen bei Handy Nr. 1 | Auf beiden Handys sieht man die erstellte Todo. |
-| 2.1 | 2 | Die App ist gestartet, man ist eingeloggt und ist auf der To-Do Seite. | Beim Titel:"Homework" und bei der Description:"english prep." schreiben. und auf den Buttond |  |
+| 2.1 | 2 | Die App ist gestartet, man ist eingeloggt und ist auf der To-Do Seite. | Beim Titel:"Homework" und bei der Description:"english prep." schreiben und auf den Button klicken. | Ein To-Do mit dem Titel:"Homework" und der Beschreibung:"english prep." wurde erstellt. |
+| 2.2 | 2 | Die App ist gestartet, man ist eingeloggt, ist auf der To-Do Seite und ein test To-Do wurde erstellt. | Auf das Todo klicken bei dem Alert bestätigen klicken. | Das Test To-Do wurde erfolgreich gelöscht. |
+| 3.1 | 3 | Die App ist gestartet und man befindet sich auf der Sign Up page. | Benutzernamen, Email und Passwort eingeben und auf "Sign Up" klicken. | Der Account wurde erfolgreich erstellt. |
+| 4.1 | 4 | Die App ist gestartet und man befindet sich auf der Log In page. | Email und Passwort eingeben und auf Log In klicken. | Der Benutzer wurde erfolgreich eingeloggt. Man befindet sich nun auf der To-Do page. |
+
 ### Mockup Design
 ![Mockup Design](https://github.com/SomethingLikeAChicken/Native-Todo-List/blob/main/resources/MockupDesign.png)
 ## Entscheiden:
+Die kursiv geschriebenen Option habe ich schlussendlich gewählt.
+
+Welche Technologie soll verwendet werden?
+•    *React Native*
+•    Android Studio
+•    Flutter
+
+Welche Backend Lösung soll verwendet werden?
+•    *Firebase*
+•    Node.js
+•    Spring boot
+
+Welche Datenbank Lösung soll verwendet werden?
+•    *Firebase*
+•    MongoDB
+•    SQL lite
+
+
+Um die besten Entscheidungen zu treffen, habe ich mehrere Möglichkeiten für jede Frage getestet und die passendste für das finale Projekt verwendet.
 ## Realisieren:
+Schauen Sie sich gerne den rest von diesem Github Repository an um das Projekt zu sehen.
 ## Kontrollieren:
 ## Auswerten:
