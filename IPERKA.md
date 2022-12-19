@@ -79,5 +79,10 @@ Schauen Sie sich gerne den rest von diesem Github Repository an um das Projekt z
 ### Testprotokoll
 | Nummer | Getestete Anforderung | Datum | Tester| Resultat | Bemerkungen | Unterschrift |
 |:-------------|:-----------------------:|:------------:|:------------:| :------------: | :--:|:--: |
-| 1.1 | 1 |14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
+| 1.1 | 1 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
+| 2.1 | 2 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
+| 2.2 | 2 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
+| 3.1 | 3 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
+| 4.1 | 4 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
+| 6.1 | 6 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
 ## Auswerten:
