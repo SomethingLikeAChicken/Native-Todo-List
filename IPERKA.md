@@ -13,7 +13,7 @@ Als unser Projekt haben wir uns dazu entschieden, eine Todo-List App zu erstelle
 | 4 | M | Funktional | Benutzerauthentifizierung: Die App sollte es Benutzern ermöglichen, sich mit einer Email-Adresse und Passwort einzuloggen. |
 | 5 | M | Qualität | Benutzerfreundlichkeit: Die App sollte einfach und intuitiv zu bedienen sein, damit Benutzer die Funktionsweise der App sofort verstehen.v |
 | 6 | M | Funktional | To-Do bearbeiten: Benutzer sollten in der Lage sein, To-Dos zu bearbeiten. |
-| - | - | - | - |
+| 7 | M | Funktional | Generisches Design: Die App sollte ein generisches Design haben, das bedeutet das mehr auf die Funktionsweise achtet als auf das Design. Desto unkomplizierter desto besser. |
 
 ## Planen:
 ### Todo-Liste mit Arbeitseinteilung
