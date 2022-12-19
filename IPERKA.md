@@ -88,7 +88,7 @@ Schauen Sie sich gerne den rest von diesem Github Repository an um das Projekt z
 |:-------------|:-----------------------:|:------------:|:------------:| :------------: | :--:|:--: |
 | 1.1 | 1 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
 | 2.1 | 2 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
-| 2.2 | 2 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
+| 2.2 | 2 | 14.12.2022 | Holzherr Janic | NOK | Die Löschfunktion wirft manchmal Fehlermeldungen aus. | Holzherr Janic |
 | 3.1 | 3 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
 | 4.1 | 4 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
 | 6.1 | 6 | 14.12.2022 | Holzherr Janic | NOK | Eine bearbeitungs funktion wurde nicht hinzugefügt. | Holzherr Janic |
