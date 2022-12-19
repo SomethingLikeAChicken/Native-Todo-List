@@ -153,20 +153,17 @@ const HomePage = () => {
     )
 
     const deleteItem = (itemID) => {
-      // db.collection("ToDos").doc(itemID)
-      // .delete()
-      // .then(() => {
-      //   console.log("Item with ID ", itemID, "was successfully deleted")
-      // })
-      // .catch((error) => {
-      //   console.log("Error: ", error)
-      // })
+      db.collection("ToDos").doc(itemID)
+      .delete()
+      .then(() => {
+        console.log("Item with ID ", itemID, "was successfully deleted")
+      })
+      .catch((error) => {
+        console.log("Error: ", error)
+      })
       setY((current) => [
-        ...current,
-        console.log("Current", current),
-        console.log("current ID", current.id),
-        console.log("Item ID", itemID),
-        // current.filter((item) => item.id !== current.id)
+        ...current.filter((item) => !(item.id == itemID)
+        )
       ]
       )
     }
