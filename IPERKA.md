@@ -35,6 +35,11 @@ Als unser Projekt haben wir uns dazu entschieden, eine Todo-List App zu erstelle
 | Login Daten abspeichern durch Firebase | Eduard | 16.11.2022 | 45min | Nein |
 | - | - | - | - |
 
+### Testfallspezifikationen:
+| Nummer | Getestete Anforderung | Voraussetzung | Eingabe | Ausgabe |
+|:-------------|:-----------------------:|:------------:|:------------:| :------------: |
+| 1.1 | 1 | Zwei Handys stehen zurverfügung. Bei beiden ist die App gestartet und man hat sich bei beiden mit dem selben Handy eingeloggt. | To-Do erstellen bei Handy Nr. 1 | Auf beiden Handys sieht man die erstellte Todo. |
+| 2.1 | 2 | Die App ist gestartet, man ist eingeloggt und ist auf der To-Do Seite. | Beim Titel:"Homework" und bei der Description:"english prep." schreiben. und auf den Buttond |  |
 ### Mockup Design
 ![Mockup Design](https://github.com/SomethingLikeAChicken/Native-Todo-List/blob/main/resources/MockupDesign.png)
 ## Entscheiden:
