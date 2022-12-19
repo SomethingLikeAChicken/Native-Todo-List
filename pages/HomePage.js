@@ -80,7 +80,6 @@ const HomePage = () => {
 
   useEffect(() => {
     // this code will run once
-
     const user = firebase.auth().currentUser;
 
     setY([])
@@ -151,6 +150,7 @@ const HomePage = () => {
     )
 
     const deleteItem = (itemID) => {
+      console.log("In delete delete Item: ", itemID)
       db.collection("ToDos").doc(itemID)
       .delete()
       .then(() => {
@@ -198,6 +198,7 @@ const HomePage = () => {
         data={y}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
+        extraData={y}
       />
     </SafeAreaView>
   );
