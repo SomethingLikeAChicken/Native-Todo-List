@@ -25,16 +25,23 @@ Als unser Projekt haben wir uns dazu entschieden, eine Todo-List App zu erstelle
 | Layout für das IPERKA Dokument erstellen | Janic | 8.11.2022 | 45min | Ja |
 | Mockup für die Todo Seite erstellen | Janic | 8.11.2022 | 45min | Ja |
 | Datenbank mit Firebase einrichten | Eduard | 8.11.2022 | 45min | Ja |
-| Readme File gestalten und mit Informationen befüllen | Joel | 13.12.2022 | Jeden Arbeitstag 30min | Nein |
-| Todo-Liste für das Projekt anpassen und Todos hinzufügen | Janic | 13.12.2022| Jeden Arbeitstag 30min | Nein |
-| Funktion um die Todos zu erstellen programmieren | Janic | 16.11.2022 | 45min | Nein |
+| Readme File gestalten und mit Informationen befüllen | Joel | 13.12.2022 | Jeden Arbeitstag 30min | Ja |
+| Todo-Liste für das Projekt anpassen und Todos hinzufügen | Janic | 13.12.2022| Jeden Arbeitstag 30min | Ja |
+| Funktion um die Todos zu erstellen programmieren | Janic | 16.11.2022 | 45min | Ja |
 | Projekt mit Datenbank verbinden | Eduard | 8.11.2022 | 45min | Ja |
 | Mockup für die Login Seite erstellen | Janic | 16.11.2022 | 45min | Ja |
 | Mockup für die Sign Up Seite erstellen | Janic | 16.11.2022 | 45min | Ja |
-| Login Component erstellen und Attribute füllen | Eduard | 16.11.2022 | 45min | Nein |
-| Login Funktionen implementieren | Eduard | 16.11.2022 | 45min | Nein |
-| Login Daten abspeichern durch Firebase | Eduard | 16.11.2022 | 45min | Nein |
-| - | - | - | - |
+| Login Component erstellen und Attribute füllen | Eduard | 16.11.2022 | 45min | Ja |
+| Login Funktionen implementieren | Eduard | 16.11.2022 | 45min | Ja |
+| Login Daten abspeichern durch Firebase | Eduard | 16.11.2022 | 45min | Ja |
+| HomePage Component erstellen und Attribute füllen | Eduard | 23.11.2022 | 120min | Ja |
+| Funktionen erstellen um Eingaben in UseStates zu speichern | Eduard | 23.11.2022 | 100min | Ja |
+| Funktionen erstellen um User aus der Homepage auszuloggen | Eduard | 23.11.2022 | 80min | Ja |
+| Datenbank anbinden um erstelltes ToDo in Firestore hinzuzufügen | Joel | 30.11.2022 | 120min | Ja |
+| Funktion erstellen um die geschriebenen ToDos darzustellen beim laden der Homepage | 7.12.2022 | Joel | 225min | Ja |
+| Erstellen eines Alert um ToDos zu ändern und zu löschen | Janic | 14.12.2022 | 80min | Ja |
+| Funktion für das bearbeiten der erstellten ToDos | Janic | 14.12.2022 | 120min | Nein |
+| Funktion für das löschen der erstellten ToDos | Janic | 14.12.2022 | 180min | Ja |
 
 ### Testfallspezifikationen:
 | Nummer | Getestete Anforderung | Voraussetzung | Eingabe | Ausgabe |
