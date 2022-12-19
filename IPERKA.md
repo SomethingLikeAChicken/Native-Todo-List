@@ -12,7 +12,8 @@ Als unser Projekt haben wir uns dazu entschieden, eine Todo-List App zu erstelle
 | 3 | M | Funktional | Benutzerregistrierung: Die App sollte es Benutzern ermöglichen, sich mit einem Benutzernamen, Email und Passwort zu registrieren. |
 | 4 | M | Funktional | Benutzerauthentifizierung: Die App sollte es Benutzern ermöglichen, sich mit einer Email-Adresse und Passwort einzuloggen. |
 | 5 | M | Qualität | Benutzerfreundlichkeit: Die App sollte einfach und intuitiv zu bedienen sein, damit Benutzer die Funktionsweise der App sofort verstehen.v |
-| 6 | M | Funktional |  |
+| 6 | M | Funktional | To-Do bearbeiten: Benutzer sollten in der Lage sein, To-Dos zu bearbeiten. |
+| - | - | - | - |
 
 ## Planen:
 ### Todo-Liste mit Arbeitseinteilung
@@ -43,11 +44,12 @@ Als unser Projekt haben wir uns dazu entschieden, eine Todo-List App zu erstelle
 | 2.2 | 2 | Die App ist gestartet, man ist eingeloggt, ist auf der To-Do Seite und ein test To-Do wurde erstellt. | Auf das Todo klicken bei dem Alert bestätigen klicken. | Das Test To-Do wurde erfolgreich gelöscht. |
 | 3.1 | 3 | Die App ist gestartet und man befindet sich auf der Sign Up page. | Benutzernamen, Email und Passwort eingeben und auf "Sign Up" klicken. | Der Account wurde erfolgreich erstellt. |
 | 4.1 | 4 | Die App ist gestartet und man befindet sich auf der Log In page. | Email und Passwort eingeben und auf Log In klicken. | Der Benutzer wurde erfolgreich eingeloggt. Man befindet sich nun auf der To-Do page. |
+| 6.1 | 6 | Die App ist gestartet, der Benutzer ist eingeloggt, man befindet sich auf der To-Do page und ein Test To-Do wurde erstellt | Das To-Do anklicken und bearbeiten auswählen. Dann die Beschreibung des To-Dos verändern | Das To-Do wurde erfolgreich bearbeitet. |
 
 ### Mockup Design
 ![Mockup Design](https://github.com/SomethingLikeAChicken/Native-Todo-List/blob/main/resources/MockupDesign.png)
 ## Entscheiden:
-Die kursiv geschriebenen Option habe ich schlussendlich gewählt.
+Die *kursiv* geschriebenen Option habe ich schlussendlich gewählt.
 
 Welche Technologie soll verwendet werden?
 •    *React Native*
@@ -55,18 +57,24 @@ Welche Technologie soll verwendet werden?
 •    Flutter
 
 Welche Backend Lösung soll verwendet werden?
-•    *Firebase*
-•    Node.js
 •    Spring boot
-
-Welche Datenbank Lösung soll verwendet werden?
+•    Node.js
 •    *Firebase*
-•    MongoDB
-•    SQL lite
+
+Welche Persistenzlösung soll verwendet werden?
+•    MySQL
+•    *Firestore*
+•    GraphQL 
+
+Welche Authentifizierungslösung soll verwendet werden?
+•    GoogleAuth
+•    GithubAuth
+•    *Eigene Registrierungsmöglichkeit*
 
 
 Um die besten Entscheidungen zu treffen, habe ich mehrere Möglichkeiten für jede Frage getestet und die passendste für das finale Projekt verwendet.
 ## Realisieren:
 Schauen Sie sich gerne den rest von diesem Github Repository an um das Projekt zu sehen.
 ## Kontrollieren:
+
 ## Auswerten:
