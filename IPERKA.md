@@ -5,7 +5,12 @@ Schauen Sie sich gerne unser [Readme File](https://github.com/SomethingLikeAChic
 | Nummer | Muss/Kann | Funktional/Qualität/Rand- Anforderung | Beschreibung |
 |:-------------|:-----------------------:|:------------:|:------------:|
 | 1 | M | Funktional | Synchronisierung: Die App sollte es Benutzern ermöglichen, ihre To-Do-Listen auf mehreren Geräten zu synchronisieren, damit sie von überall aus auf ihre Aufgaben zugreifen können. | 
-| - | - | - | - |
+| 2 | M | Funktional | To-Do erstellen und Löschen: Benutzer sollten in der Lage sein, To-Dos zu erstellen und zu löschen. |
+| 3 | M | Funktional | Benutzerregistrierung: Die App sollte es Benutzern ermöglichen, sich mit einem Benutzernamen, Email und Passwort zu registrieren. |
+| 4 | M | Funktional | Benutzerauthentifizierung: Die App sollte es Benutzern ermöglichen, sich mit einem Benutzernamen und Passwort einzuloggen. |
+| 5 | M | Qualität | Benutzerfreundlichkeit: Die App sollte einfach und intuitiv zu bedienen sein, damit Benutzer die Funktionsweise der App sofort verstehen. |
+| 6 | M | Funktional |  |
+
 ## Planen:
 ### Todo-Liste mit Arbeitseinteilung
 | Arbeitspaket | Verantwortliche Person | Abgabe Datum | Zeitaufwand | Fertig? |
