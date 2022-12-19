@@ -38,7 +38,7 @@ Als unser Projekt haben wir uns dazu entschieden, eine Todo-List App zu erstelle
 | Funktionen erstellen um Eingaben in UseStates zu speichern | Eduard | 23.11.2022 | 100min | Ja |
 | Funktionen erstellen um User aus der Homepage auszuloggen | Eduard | 23.11.2022 | 80min | Ja |
 | Datenbank anbinden um erstelltes ToDo in Firestore hinzuzufügen | Joel | 30.11.2022 | 120min | Ja |
-| Funktion erstellen um die geschriebenen ToDos darzustellen beim laden der Homepage | 7.12.2022 | Joel | 225min | Ja |
+| Funktion erstellen um die geschriebenen ToDos darzustellen beim laden der Homepage | Joel | 7.12.2022 | 225min | Ja |
 | Erstellen eines Alert um ToDos zu ändern und zu löschen | Janic | 14.12.2022 | 80min | Ja |
 | Funktion für das bearbeiten der erstellten ToDos | Janic | 14.12.2022 | 120min | Nein |
 | Funktion für das löschen der erstellten ToDos | Janic | 14.12.2022 | 180min | Ja |
