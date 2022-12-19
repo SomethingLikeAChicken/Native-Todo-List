@@ -84,5 +84,11 @@ Schauen Sie sich gerne den rest von diesem Github Repository an um das Projekt z
 | 2.2 | 2 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
 | 3.1 | 3 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
 | 4.1 | 4 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
-| 6.1 | 6 | 14.12.2022 | Holzherr Janic | OK | - | Holzherr Janic |
+| 6.1 | 6 | 14.12.2022 | Holzherr Janic | NOK | Eine bearbeitungs funktion wurde nicht hinzugefügt. | Holzherr Janic |
 ## Auswerten:
+### Fazit
+Insgesamt war das Projekt ein großer Erfolg und wir sind stolz darauf, eine funktionierende To-Do-Liste-Anwendung entwickelt zu haben, die alle unsere Anforderungen erfüllt hat bis auf die 6. Anforderung (To-Dos bearbeiten). Wir hatten eine gute Zusammenarbeit in der Gruppe und konnten unsere Aufgaben effektiv verteilen, was dazu beigetragen hat, dass alles reibungslos funktioniert hat.
+
+Es gab jedoch auch eine Anforderung, die nicht vollständig erfüllt wurde. Obwohl wir uns bemüht haben, eine Lösung zu finden, haben wir letztendlich beschlossen, diese Anforderung aus Zeit- und Ressourcengründen bei diesem Projekt zu überspringen. Wir haben jedoch gelernt, dass es wichtig ist, unsere Ressourcen sorgfältig zu verwalten und Prioritäten zu setzen, um sicherzustellen, dass wir unser Bestes geben, um alle Anforderungen zu erfüllen.
+
+Insgesamt war das Projekt eine wertvolle Erfahrung und wir haben viel über die Entwicklung von mobilen Anwendungen gelernt. Wir sind zuversichtlich, dass wir beim nächsten Mal noch besser vorbereitet sein werden und alle Anforderungen erfüllen werden.
