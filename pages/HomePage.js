@@ -10,6 +10,8 @@ import {
   SafeAreaView,
   TextInput,
   KeyboardAvoidingView,
+  Pressable,
+  Alert,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { auth, db } from "../firebase";
@@ -132,11 +134,48 @@ const HomePage = () => {
     setDescription("")
   };
 
+  const deleteAlert = (id, titel) =>
+    Alert.alert(
+      titel,
+      "ToDo Löschen",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("cancel pressed"),
+          style: "cancel"
+        },
+        {
+          text: "Delete",
+          onPress: () => deleteItem(id)
+        },
+        {cancelable : false}
+      ]
+    )
+
+    const deleteItem = (itemID) => {
+      // db.collection("ToDos").doc(itemID)
+      // .delete()
+      // .then(() => {
+      //   console.log("Item with ID ", itemID, "was successfully deleted")
+      // })
+      // .catch((error) => {
+      //   console.log("Error: ", error)
+      // })
+      setY((current) => [
+        ...current,
+        console.log("Current", current),
+        console.log("current ID", current.id),
+        console.log("Item ID", itemID),
+        // current.filter((item) => item.id !== current.id)
+      ]
+      )
+    }
+
   const renderItem = ({ item }) => (
-    <View style={styles.listContainer}>
+    <Pressable style={styles.listContainer} onPress={() => deleteAlert(item.id, item.tdTitel)}>
       <Text style={{ fontSize: "25", fontweight: "normal" }}>{item.tdTitel}</Text>
       <Text style={{ fontSize: "13" }}>{item.description}</Text>
-    </View>
+    </Pressable>
   );
 
   return (
