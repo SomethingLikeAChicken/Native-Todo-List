@@ -2,13 +2,16 @@
 #### von Holzherr Janic, Berisha Eduard und Fritschi Joel
 Schauen Sie sich gerne unser [Readme File](https://github.com/SomethingLikeAChicken/Native-Todo-List/blob/main/README.md "README.md File") an um zu verstehen wie die App funktioniert.
 ## Informieren:
+### Projekt Idee:
+Als unser Projekt haben wir uns dazu entschieden, eine Todo-List App zu erstellen. Diese wird wir mit einer Datenbank (via Firebase) versehen um Authentifizierung und eine Persistenzlösung zu haben. Das Design wollen wir generisch lassen und mehr auf die Funktionalität achten als auf das Design. Zudem solle es eine simple App sein, welche keine Übung braucht oder ähnliches.
+### Anforderungsanalyse:
 | Nummer | Muss/Kann | Funktional/Qualität/Rand- Anforderung | Beschreibung |
 |:-------------|:-----------------------:|:------------:|:------------:|
 | 1 | M | Funktional | Synchronisierung: Die App sollte es Benutzern ermöglichen, ihre To-Do-Listen auf mehreren Geräten zu synchronisieren, damit sie von überall aus auf ihre Aufgaben zugreifen können. | 
 | 2 | M | Funktional | To-Do erstellen und Löschen: Benutzer sollten in der Lage sein, To-Dos zu erstellen und zu löschen. |
 | 3 | M | Funktional | Benutzerregistrierung: Die App sollte es Benutzern ermöglichen, sich mit einem Benutzernamen, Email und Passwort zu registrieren. |
-| 4 | M | Funktional | Benutzerauthentifizierung: Die App sollte es Benutzern ermöglichen, sich mit einem Benutzernamen und Passwort einzuloggen. |
-| 5 | M | Qualität | Benutzerfreundlichkeit: Die App sollte einfach und intuitiv zu bedienen sein, damit Benutzer die Funktionsweise der App sofort verstehen. |
+| 4 | M | Funktional | Benutzerauthentifizierung: Die App sollte es Benutzern ermöglichen, sich mit einer Email-Adresse und Passwort einzuloggen. |
+| 5 | M | Qualität | Benutzerfreundlichkeit: Die App sollte einfach und intuitiv zu bedienen sein, damit Benutzer die Funktionsweise der App sofort verstehen.v |
 | 6 | M | Funktional |  |
 
 ## Planen:
